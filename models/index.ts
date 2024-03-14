@@ -22,6 +22,7 @@ export * from './chapter-snapshot-response-model';
 export * from './chapter-snapshots-response-model';
 export * from './chapter-statistics-response-model';
 export * from './do-dubbing-response-model';
+export * from './dubbing-metadata-response';
 export * from './extended-subscription-response-model';
 export * from './feedback-response-model';
 export * from './fine-tuning-response-model';

@@ -25,6 +25,8 @@ import { BodyDubAVideoOrAnAudioFileV1DubbingPost } from '../models';
 // @ts-ignore
 import { DoDubbingResponseModel } from '../models';
 // @ts-ignore
+import { DubbingMetadataResponse } from '../models';
+// @ts-ignore
 import { HTTPValidationError } from '../models';
 import { paginate } from "../pagination/paginate";
 import type * as buffer from "buffer"
@@ -257,7 +259,7 @@ export const DubbingApiAxiosParamCreator = function (configuration?: Configurati
             };
         },
         /**
-         * Returns dubbed file.
+         * Returns dubbed file as a streamed file. Videos will be returned in MP4 format and audio only dubs will be returned in MP3.
          * @summary Get Dubbed File
          * @param {string} dubbingId ID of the dubbing project.
          * @param {string} languageCode ID of the language.
@@ -404,13 +406,13 @@ export const DubbingApiFp = function(configuration?: Configuration) {
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
         /**
-         * Returns dubbed file.
+         * Returns dubbed file as a streamed file. Videos will be returned in MP4 format and audio only dubs will be returned in MP3.
          * @summary Get Dubbed File
          * @param {DubbingApiGetFileRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getFile(requestParameters: DubbingApiGetFileRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+        async getFile(requestParameters: DubbingApiGetFileRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<void>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getFile(requestParameters.dubbingId, requestParameters.languageCode, requestParameters.xiApiKey, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -421,7 +423,7 @@ export const DubbingApiFp = function(configuration?: Configuration) {
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        async getProjectMetadata(requestParameters: DubbingApiGetProjectMetadataRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<object>> {
+        async getProjectMetadata(requestParameters: DubbingApiGetProjectMetadataRequest, options?: AxiosRequestConfig): Promise<(axios?: AxiosInstance, basePath?: string) => AxiosPromise<DubbingMetadataResponse>> {
             const localVarAxiosArgs = await localVarAxiosParamCreator.getProjectMetadata(requestParameters.dubbingId, requestParameters.xiApiKey, options);
             return createRequestFunction(localVarAxiosArgs, globalAxios, BASE_PATH, configuration);
         },
@@ -456,13 +458,13 @@ export const DubbingApiFactory = function (configuration?: Configuration, basePa
             return localVarFp.fileInLanguage(requestParameters, options).then((request) => request(axios, basePath));
         },
         /**
-         * Returns dubbed file.
+         * Returns dubbed file as a streamed file. Videos will be returned in MP4 format and audio only dubs will be returned in MP3.
          * @summary Get Dubbed File
          * @param {DubbingApiGetFileRequest} requestParameters Request parameters.
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getFile(requestParameters: DubbingApiGetFileRequest, options?: AxiosRequestConfig): AxiosPromise<object> {
+        getFile(requestParameters: DubbingApiGetFileRequest, options?: AxiosRequestConfig): AxiosPromise<void> {
             return localVarFp.getFile(requestParameters, options).then((request) => request(axios, basePath));
         },
         /**
@@ -472,7 +474,7 @@ export const DubbingApiFactory = function (configuration?: Configuration, basePa
          * @param {*} [options] Override http request option.
          * @throws {RequiredError}
          */
-        getProjectMetadata(requestParameters: DubbingApiGetProjectMetadataRequest, options?: AxiosRequestConfig): AxiosPromise<object> {
+        getProjectMetadata(requestParameters: DubbingApiGetProjectMetadataRequest, options?: AxiosRequestConfig): AxiosPromise<DubbingMetadataResponse> {
             return localVarFp.getProjectMetadata(requestParameters, options).then((request) => request(axios, basePath));
         },
     };
@@ -707,7 +709,7 @@ export class DubbingApiGenerated extends BaseAPI {
     }
 
     /**
-     * Returns dubbed file.
+     * Returns dubbed file as a streamed file. Videos will be returned in MP4 format and audio only dubs will be returned in MP3.
      * @summary Get Dubbed File
      * @param {DubbingApiGetFileRequest} requestParameters Request parameters.
      * @param {*} [options] Override http request option.

@@ -107,9 +107,16 @@ export interface SubscriptionResponseModel {
      * @memberof SubscriptionResponseModel
      */
     'status': SubscriptionResponseModelStatusEnum;
+    /**
+     * 
+     * @type {string}
+     * @memberof SubscriptionResponseModel
+     */
+    'billing_period': SubscriptionResponseModelBillingPeriodEnum;
 }
 
 type SubscriptionResponseModelCurrencyEnum = 'usd' | 'eur'
 type SubscriptionResponseModelStatusEnum = 'trialing' | 'active' | 'incomplete' | 'incomplete_expired' | 'past_due' | 'canceled' | 'unpaid' | 'free'
+type SubscriptionResponseModelBillingPeriodEnum = 'monthly_period' | 'annual_period'
 
 

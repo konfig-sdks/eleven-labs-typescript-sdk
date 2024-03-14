@@ -1,4 +1,4 @@
-<div align="center">
+<div align="left">
 
 [![Visit Elevenlabs](./header.png)](https://elevenlabs.com)
 
@@ -389,7 +389,7 @@ Whether to prepare dub for edits in dubbing studio.
 
 ### `elevenlabs.dubbing.getFile`<a id="elevenlabsdubbinggetfile"></a>
 
-Returns dubbed file.
+Returns dubbed file as a streamed file. Videos will be returned in MP4 format and audio only dubs will be returned in MP3.
 
 #### 🛠️ Usage<a id="🛠️-usage"></a>
 
@@ -444,6 +444,10 @@ ID of the dubbing project.
 ##### xiApiKey: `string`<a id="xiapikey-string"></a>
 
 Your API key. This is required by most endpoints to access our API programatically. You can view your xi-api-key using the \'Profile\' tab on the website.
+
+#### 🔄 Return<a id="🔄-return"></a>
+
+[DubbingMetadataResponse](./models/dubbing-metadata-response.ts)
 
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 

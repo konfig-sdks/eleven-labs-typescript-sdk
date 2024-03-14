@@ -110,6 +110,12 @@ export interface ExtendedSubscriptionResponseModel {
     'status': ExtendedSubscriptionResponseModelStatusEnum;
     /**
      * 
+     * @type {string}
+     * @memberof ExtendedSubscriptionResponseModel
+     */
+    'billing_period': ExtendedSubscriptionResponseModelBillingPeriodEnum;
+    /**
+     * 
      * @type {InvoiceResponseModel}
      * @memberof ExtendedSubscriptionResponseModel
      */
@@ -124,5 +130,6 @@ export interface ExtendedSubscriptionResponseModel {
 
 type ExtendedSubscriptionResponseModelCurrencyEnum = 'usd' | 'eur'
 type ExtendedSubscriptionResponseModelStatusEnum = 'trialing' | 'active' | 'incomplete' | 'incomplete_expired' | 'past_due' | 'canceled' | 'unpaid' | 'free'
+type ExtendedSubscriptionResponseModelBillingPeriodEnum = 'monthly_period' | 'annual_period'
 
 
