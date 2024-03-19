@@ -10,6 +10,7 @@ export * from './body-create-apreviously-generated-voice-v1-voice-generation-cre
 export * from './body-creates-audio-native-enabled-project-v1-audio-native-post';
 export * from './body-download-history-items-v1-history-download-post';
 export * from './body-dub-avideo-or-an-audio-file-v1-dubbing-post';
+export * from './body-edit-vanity-link-admin-n8enylacgd-vanity-link-vanity-link-id-update-post';
 export * from './body-edit-voice-v1-voices-voice-id-edit-post';
 export * from './body-generate-arandom-voice-v1-voice-generation-generate-voice-post';
 export * from './body-speech-to-speech-streaming-v1-speech-to-speech-voice-id-stream-post';

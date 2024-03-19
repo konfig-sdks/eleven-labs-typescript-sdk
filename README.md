@@ -17,6 +17,12 @@ This is the documentation for the ElevenLabs API. You can use this API to use ou
 - [Reference](#reference)
   * [`elevenlabs.pronunciationDictionary.createFromFile`](#elevenlabspronunciationdictionarycreatefromfile)
   * [`elevenlabs.pronunciationDictionary.getMetadata`](#elevenlabspronunciationdictionarygetmetadata)
+  * [`elevenlabs.admin.archiveCouponPromocodePost`](#elevenlabsadminarchivecouponpromocodepost)
+  * [`elevenlabs.admin.editVanityLink`](#elevenlabsadmineditvanitylink)
+  * [`elevenlabs.admin.getAllCoupons`](#elevenlabsadmingetallcoupons)
+  * [`elevenlabs.admin.getAllVanityLinks`](#elevenlabsadmingetallvanitylinks)
+  * [`elevenlabs.admin.getVanityLink`](#elevenlabsadmingetvanitylink)
+  * [`elevenlabs.admin.removeVanityLink`](#elevenlabsadminremovevanitylink)
   * [`elevenlabs.audioNative.createProjectWithEmbeddableHtml`](#elevenlabsaudionativecreateprojectwithembeddablehtml)
   * [`elevenlabs.dubbing.deleteProject`](#elevenlabsdubbingdeleteproject)
   * [`elevenlabs.dubbing.fileInLanguage`](#elevenlabsdubbingfileinlanguage)
@@ -170,6 +176,160 @@ Your API key. This is required by most endpoints to access our API programatical
 #### 🌐 Endpoint<a id="🌐-endpoint"></a>
 
 `/v1/pronunciation-dictionaries/{pronunciation_dictionary_id}` `GET`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `elevenlabs.admin.archiveCouponPromocodePost`<a id="elevenlabsadminarchivecouponpromocodepost"></a>
+
+Archive Coupon
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const archiveCouponPromocodePostResponse =
+  await elevenlabs.admin.archiveCouponPromocodePost({
+    promocode: "promocode_example",
+  });
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### promocode: `string`<a id="promocode-string"></a>
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/admin/n8enylacgd/coupon/{promocode}/archive` `POST`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `elevenlabs.admin.editVanityLink`<a id="elevenlabsadmineditvanitylink"></a>
+
+Edit Vanity Link
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const editVanityLinkResponse = await elevenlabs.admin.editVanityLink({
+  vanityLinkId: "vanityLinkId_example",
+  vanity_slug: "vanity_slug_example",
+  target_url: "target_url_example",
+  comment: "comment_example",
+});
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### vanity_slug: `string`<a id="vanity_slug-string"></a>
+
+The new slug for the vanity link. For example, if you want the vanity link to be /blog/NEW_SLUG, enter NEW_SLUG.
+
+##### target_url: `string`<a id="target_url-string"></a>
+
+The new URL that the vanity link should redirect to.
+
+##### comment: `string`<a id="comment-string"></a>
+
+A new comment or description for the vanity link.
+
+##### vanityLinkId: `string`<a id="vanitylinkid-string"></a>
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/admin/n8enylacgd/vanity-link/{vanity_link_id}/update` `POST`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `elevenlabs.admin.getAllCoupons`<a id="elevenlabsadmingetallcoupons"></a>
+
+Get All Coupons
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const getAllCouponsResponse = await elevenlabs.admin.getAllCoupons();
+```
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/admin/n8enylacgd/coupons` `GET`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `elevenlabs.admin.getAllVanityLinks`<a id="elevenlabsadmingetallvanitylinks"></a>
+
+Get All Vanity Links
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const getAllVanityLinksResponse = await elevenlabs.admin.getAllVanityLinks();
+```
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/admin/n8enylacgd/vanity-links` `GET`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `elevenlabs.admin.getVanityLink`<a id="elevenlabsadmingetvanitylink"></a>
+
+Get Vanity Link
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const getVanityLinkResponse = await elevenlabs.admin.getVanityLink({
+  slug: "slug_example",
+});
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### slug: `string`<a id="slug-string"></a>
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/admin/n8enylacgd/vanity-link/{slug}` `GET`
+
+[🔙 **Back to Table of Contents**](#table-of-contents)
+
+---
+
+
+### `elevenlabs.admin.removeVanityLink`<a id="elevenlabsadminremovevanitylink"></a>
+
+Delete Vanity Link
+
+#### 🛠️ Usage<a id="🛠️-usage"></a>
+
+```typescript
+const removeVanityLinkResponse = await elevenlabs.admin.removeVanityLink({
+  vanityLinkId: "vanityLinkId_example",
+});
+```
+
+#### ⚙️ Parameters<a id="⚙️-parameters"></a>
+
+##### vanityLinkId: `string`<a id="vanitylinkid-string"></a>
+
+#### 🌐 Endpoint<a id="🌐-endpoint"></a>
+
+`/admin/n8enylacgd/vanity-link/{vanity_link_id}/delete` `POST`
 
 [🔙 **Back to Table of Contents**](#table-of-contents)
 
@@ -1472,7 +1632,7 @@ You can turn on latency optimizations at some cost of quality. The best possible
 
 ##### outputFormat: `string`<a id="outputformat-string"></a>
 
-Output format of the generated audio. Must be one of: mp3_22050_32 - output format, mp3 with 22.05kHz sample rate at 32kbps. mp3_44100_32 - output format, mp3 with 44.1kHz sample rate at 32kbps. mp3_44100_64 - output format, mp3 with 44.1kHz sample rate at 64kbps. mp3_44100_96 - output format, mp3 with 44.1kHz sample rate at 96kbps. mp3_44100_128 - default output format, mp3 with 44.1kHz sample rate at 128kbps. mp3_44100_192 - output format, mp3 with 44.1kHz sample rate at 192kbps. Requires you to be subscribed to Creator tier or above. pcm_16000 - PCM format (S16LE) with 16kHz sample rate. pcm_22050 - PCM format (S16LE) with 22.05kHz sample rate. pcm_24000 - PCM format (S16LE) with 24kHz sample rate. pcm_44100 - PCM format (S16LE) with 44.1kHz sample rate. Requires you to be subscribed to Independent Publisher tier or above. ulaw_8000 - μ-law format (sometimes written mu-law, often approximated as u-law) with 8kHz sample rate. Note that this format is commonly used for Twilio audio inputs. 
+Output format of the generated audio. Must be one of: mp3_22050_32 - output format, mp3 with 22.05kHz sample rate at 32kbps. mp3_44100_32 - output format, mp3 with 44.1kHz sample rate at 32kbps. mp3_44100_64 - output format, mp3 with 44.1kHz sample rate at 64kbps. mp3_44100_96 - output format, mp3 with 44.1kHz sample rate at 96kbps. mp3_44100_128 - default output format, mp3 with 44.1kHz sample rate at 128kbps. mp3_44100_192 - output format, mp3 with 44.1kHz sample rate at 192kbps. Requires you to be subscribed to Creator tier or above. pcm_16000 - PCM format (S16LE) with 16kHz sample rate. pcm_22050 - PCM format (S16LE) with 22.05kHz sample rate. pcm_24000 - PCM format (S16LE) with 24kHz sample rate. pcm_44100 - PCM format (S16LE) with 44.1kHz sample rate. Requires you to be subscribed to Pro tier or above. ulaw_8000 - μ-law format (sometimes written mu-law, often approximated as u-law) with 8kHz sample rate. Note that this format is commonly used for Twilio audio inputs. 
 
 ##### xiApiKey: `string`<a id="xiapikey-string"></a>
 
@@ -1533,7 +1693,7 @@ You can turn on latency optimizations at some cost of quality. The best possible
 
 ##### outputFormat: `string`<a id="outputformat-string"></a>
 
-Output format of the generated audio. Must be one of: mp3_22050_32 - output format, mp3 with 22.05kHz sample rate at 32kbps. mp3_44100_32 - output format, mp3 with 44.1kHz sample rate at 32kbps. mp3_44100_64 - output format, mp3 with 44.1kHz sample rate at 64kbps. mp3_44100_96 - output format, mp3 with 44.1kHz sample rate at 96kbps. mp3_44100_128 - default output format, mp3 with 44.1kHz sample rate at 128kbps. mp3_44100_192 - output format, mp3 with 44.1kHz sample rate at 192kbps. Requires you to be subscribed to Creator tier or above. pcm_16000 - PCM format (S16LE) with 16kHz sample rate. pcm_22050 - PCM format (S16LE) with 22.05kHz sample rate. pcm_24000 - PCM format (S16LE) with 24kHz sample rate. pcm_44100 - PCM format (S16LE) with 44.1kHz sample rate. Requires you to be subscribed to Independent Publisher tier or above. ulaw_8000 - μ-law format (sometimes written mu-law, often approximated as u-law) with 8kHz sample rate. Note that this format is commonly used for Twilio audio inputs. 
+Output format of the generated audio. Must be one of: mp3_22050_32 - output format, mp3 with 22.05kHz sample rate at 32kbps. mp3_44100_32 - output format, mp3 with 44.1kHz sample rate at 32kbps. mp3_44100_64 - output format, mp3 with 44.1kHz sample rate at 64kbps. mp3_44100_96 - output format, mp3 with 44.1kHz sample rate at 96kbps. mp3_44100_128 - default output format, mp3 with 44.1kHz sample rate at 128kbps. mp3_44100_192 - output format, mp3 with 44.1kHz sample rate at 192kbps. Requires you to be subscribed to Creator tier or above. pcm_16000 - PCM format (S16LE) with 16kHz sample rate. pcm_22050 - PCM format (S16LE) with 22.05kHz sample rate. pcm_24000 - PCM format (S16LE) with 24kHz sample rate. pcm_44100 - PCM format (S16LE) with 44.1kHz sample rate. Requires you to be subscribed to Pro tier or above. ulaw_8000 - μ-law format (sometimes written mu-law, often approximated as u-law) with 8kHz sample rate. Note that this format is commonly used for Twilio audio inputs. 
 
 ##### xiApiKey: `string`<a id="xiapikey-string"></a>
 

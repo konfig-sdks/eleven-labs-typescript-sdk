@@ -31,6 +31,51 @@ export const operationParameterMap: Record<string, Entry> = {
             },
         ]
     },
+    '/admin/n8enylacgd/coupon/{promocode}/archive-POST': {
+        parameters: [
+            {
+                name: 'promocode'
+            },
+        ]
+    },
+    '/admin/n8enylacgd/vanity-link/{vanity_link_id}/update-POST': {
+        parameters: [
+            {
+                name: 'vanity_slug'
+            },
+            {
+                name: 'target_url'
+            },
+            {
+                name: 'comment'
+            },
+            {
+                name: 'vanity_link_id'
+            },
+        ]
+    },
+    '/admin/n8enylacgd/coupons-GET': {
+        parameters: [
+        ]
+    },
+    '/admin/n8enylacgd/vanity-links-GET': {
+        parameters: [
+        ]
+    },
+    '/admin/n8enylacgd/vanity-link/{slug}-GET': {
+        parameters: [
+            {
+                name: 'slug'
+            },
+        ]
+    },
+    '/admin/n8enylacgd/vanity-link/{vanity_link_id}/delete-POST': {
+        parameters: [
+            {
+                name: 'vanity_link_id'
+            },
+        ]
+    },
     '/v1/audio-native-POST': {
         parameters: [
             {
